@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//localhost:1313/</loc>
-    <lastmod>2026-05-05T14:20:08+08:00</lastmod>
+    <lastmod>2026-05-05T14:48:32+08:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/congratulations/</loc>
+    <lastmod>2026-05-05T14:48:32+08:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/</loc>
-    <lastmod>2026-05-05T14:20:08+08:00</lastmod>
+    <lastmod>2026-05-05T14:48:32+08:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/%E6%89%93%E4%B8%AA%E6%8B%9B%E5%91%BC/</loc>
+    <loc>//localhost:1313/posts/first_post/</loc>
     <lastmod>2026-05-05T14:20:08+08:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/</loc>

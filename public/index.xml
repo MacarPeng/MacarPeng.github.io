@@ -6,13 +6,21 @@
     <description>Recent content on </description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 May 2026 14:20:08 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 14:48:32 +0800</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Congratulations</title>
+      <link>//localhost:1313/posts/congratulations/</link>
+      <pubDate>Tue, 05 May 2026 14:48:32 +0800</pubDate>
+      <guid>//localhost:1313/posts/congratulations/</guid>
+      <description>&lt;p&gt;可喜可贺，我终于把这个blog配好了🎇
+趁着五一放假期间搭好我自己的博客，接下来我会努力坚持每天更新今日学习的内容，不定期掉落一些想法和思考，但是重点还是我学习的过程与收获，期待与各位刷到的人一起分享，一起进步👏&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>打个招呼</title>
-      <link>//localhost:1313/posts/%E6%89%93%E4%B8%AA%E6%8B%9B%E5%91%BC/</link>
+      <link>//localhost:1313/posts/first_post/</link>
       <pubDate>Tue, 05 May 2026 14:20:08 +0800</pubDate>
-      <guid>//localhost:1313/posts/%E6%89%93%E4%B8%AA%E6%8B%9B%E5%91%BC/</guid>
+      <guid>//localhost:1313/posts/first_post/</guid>
       <description>&lt;p&gt;先打个招呼，测试一下配置😋&lt;/p&gt;</description>
     </item>
   </channel>
