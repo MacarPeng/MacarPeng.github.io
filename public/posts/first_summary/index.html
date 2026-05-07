@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>从寒假到现在的总结 | </title>
+<meta name="keywords" content="">
+<meta name="description" content="趁着今天搭好博客了赶紧先总结一下从寒假到现在的收获和未来的规划。
+去年九月份应该是我第一次接触编程，没记错的话应该是第一节课我才学会敲printf(&ldquo;Hello,world!\n&rdquo;)，之后感觉自己可能更喜欢编程，所以就顺着自己的兴趣制定了学习计划。寒假完成了数据结构，C&#43;&#43;，python的学习，开学到现在学了numpy，机器学习和深度学习基础，cs231n课程，完成了cs231n的assignment1,2，现在正在完成assignment3，同时开始学cs224n，与一开始的规划似乎慢了一点，因为六月份就要开始准备期末考试了，不过如果把时间赶一赶的话应该也能完成。五一期间因为有各种事情耽误所以基本没用怎么推进进度，尝试去阅读一些文献，读了《Attention is All you Need》，因为之前听过的课程里面有讲过transformer架构，大概能理解多头自注意力机制，带掩码的自注意力，但是transfomer具体的数学计算过程感觉还是有点难度，在完成assignment3之后应该会好一点。这几天也试着读了下侯世达先生的《哥德尔、艾舍尔、巴赫——集异璧之大成》，大量艺术，历史的内容和晦涩的数学逻辑学推导让人读起来感觉很疲惫，但是其中关于自指的论述也很有意思，先前我对于AI思考的过程颇为好奇，读过书之后给了我一种崭新的，更系统的视角去思考这个问题。总的来看，无论是能力还是思维，相比去年我都获得了我自己满意的提升。
+接下来大概是讲一讲自己未来的规划吧，首先7月5号放假之前肯定是要学完cs224n，对应的assignment也要完成，期末考试肯定也不能放松，上学期绩点混到10%了，这学期没怎么在课内投入全靠六月份的投入所以肯定达不到上学期的水平，但是至少要吊在15%的边上。然后是暑假的规划，暑假准备开始接触一些计组的知识，然后看一下cuda编程相关的教程，试着入门一下，毕竟我自己想做的还是更偏向底层的工作，无论是AI infra还是XAI，不是很想跟着现在的技术焦虑的浪潮一块走，至少是不愿意做只会调API或者prompt engineering的工程师，最好能找到个实验室去跟着一起做科研，做一做打杂的活顺便学一些科研技能，再不济也要感受一下科研，干活什么的倒是没有问题。剩下的规划目前还没理清楚，可以预见的是大二会同步推进一些算法上的训练，尤其是C和C&#43;&#43;的（去参加一些比赛什么的也可以接受吧🤔），然后如果有机会的话尽量去参与到一些实际工程项目里面多吸取经验。
+最后就是一些思考，上大学快一年了，我感觉至少相比高中的我我应该变化很大。很多之前的幻想破灭但是我也找到自己愿意为之付出努力的方向，我认为我是幸运的。平衡好学校和兴趣的难度也不低，完成这些的代价是水课和一些水赛，综测，第二课堂之类的我完全放弃了，毕竟我的精力有限如果在这些事情上还投入的话我的进度会远远落下，不过该拿的分还是得想办法拿，综测可以不要，但是课程考试我还是得在考前一个星期狠狠努力争取速通😭。
+好吧，感觉到这里差不多了，我的第一个博客就在这里收尾吧，争取做到日更，因为更新就代表我今天学到新东西了😋">
+<meta name="author" content="">
+<link rel="canonical" href="//localhost:1313/posts/first_summary/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.84fa7cad4ac788a7a4b78f2470af93d5f01e0c73d96dfd059c570dc91f7f8d1d.css" integrity="sha256-hPp8rUrHiKekt48kcK&#43;T1fAeDHPZbf0FnFcNyR9/jR0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/first_summary/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      从寒假到现在的总结
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-05-05 18:16:51 +0800 CST'>May 5, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>趁着今天搭好博客了赶紧先总结一下从寒假到现在的收获和未来的规划。
+去年九月份应该是我第一次接触编程，没记错的话应该是第一节课我才学会敲printf(&ldquo;Hello,world!\n&rdquo;)，之后感觉自己可能更喜欢编程，所以就顺着自己的兴趣制定了学习计划。寒假完成了数据结构，C++，python的学习，开学到现在学了numpy，机器学习和深度学习基础，cs231n课程，完成了cs231n的assignment1,2，现在正在完成assignment3，同时开始学cs224n，与一开始的规划似乎慢了一点，因为六月份就要开始准备期末考试了，不过如果把时间赶一赶的话应该也能完成。五一期间因为有各种事情耽误所以基本没用怎么推进进度，尝试去阅读一些文献，读了《Attention is All you Need》，因为之前听过的课程里面有讲过transformer架构，大概能理解多头自注意力机制，带掩码的自注意力，但是transfomer具体的数学计算过程感觉还是有点难度，在完成assignment3之后应该会好一点。这几天也试着读了下侯世达先生的《哥德尔、艾舍尔、巴赫——集异璧之大成》，大量艺术，历史的内容和晦涩的数学逻辑学推导让人读起来感觉很疲惫，但是其中关于自指的论述也很有意思，先前我对于AI思考的过程颇为好奇，读过书之后给了我一种崭新的，更系统的视角去思考这个问题。总的来看，无论是能力还是思维，相比去年我都获得了我自己满意的提升。
+接下来大概是讲一讲自己未来的规划吧，首先7月5号放假之前肯定是要学完cs224n，对应的assignment也要完成，期末考试肯定也不能放松，上学期绩点混到10%了，这学期没怎么在课内投入全靠六月份的投入所以肯定达不到上学期的水平，但是至少要吊在15%的边上。然后是暑假的规划，暑假准备开始接触一些计组的知识，然后看一下cuda编程相关的教程，试着入门一下，毕竟我自己想做的还是更偏向底层的工作，无论是AI infra还是XAI，不是很想跟着现在的技术焦虑的浪潮一块走，至少是不愿意做只会调API或者prompt engineering的工程师，最好能找到个实验室去跟着一起做科研，做一做打杂的活顺便学一些科研技能，再不济也要感受一下科研，干活什么的倒是没有问题。剩下的规划目前还没理清楚，可以预见的是大二会同步推进一些算法上的训练，尤其是C和C++的（去参加一些比赛什么的也可以接受吧🤔），然后如果有机会的话尽量去参与到一些实际工程项目里面多吸取经验。
+最后就是一些思考，上大学快一年了，我感觉至少相比高中的我我应该变化很大。很多之前的幻想破灭但是我也找到自己愿意为之付出努力的方向，我认为我是幸运的。平衡好学校和兴趣的难度也不低，完成这些的代价是水课和一些水赛，综测，第二课堂之类的我完全放弃了，毕竟我的精力有限如果在这些事情上还投入的话我的进度会远远落下，不过该拿的分还是得想办法拿，综测可以不要，但是课程考试我还是得在考前一个星期狠狠努力争取速通😭。
+好吧，感觉到这里差不多了，我的第一个博客就在这里收尾吧，争取做到日更，因为更新就代表我今天学到新东西了😋</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/"></a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

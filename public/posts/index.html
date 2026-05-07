@@ -107,6 +107,52 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">26-5-7总结
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>今日回顾：昨天的计划基本完成除了少抄了一份实验报告，每天补回来。cs231n最后的收尾完成了，但是不知道为什么最后一个jupyter里面有一个单元格只要编译内核就会崩溃，找了半天也没发现问题，只能归因于我可能少下了什么东西，因为数据集并没有在assignment的zip里面，是我自己找的……cs224n的lecture3讲的是很基础的反向传播推导，直接跳过，lecture4讲的是语言学的内容，讲了依存句法分析和基于转换的分析器，听的有点云里雾里的，大概明白了是找到一个root，然后从左弧，右弧分别比对，看哪边是更…高级的？或者说父辈🤔，总之找到核心词，与修饰词区分开，最后应当是一个树状结构。相比昨天看到的word2vec只能得到单个词与词的关系，这种方法可以保留依存关系，或者说主谓宾关系？可以用神经网络去学习得到做shift,leftarc,rightarc的时机，assignment2里面有涉及这部分内容，好像，还是assignment3来着，今天把作业中有关word2vec的数学推导完成了（鉴于markdown水平不高，就不放上来了），但是代码还没写，明天补齐吧。今天坐了五个多小时高铁回北京，现在有点累了，所以决定今天早睡。
+明日计划：完成cs224n的assignment2，阅读一下《ROFORMER: ENHANCED TRANSFORMER WITH ROTARY POSITION EMBEDDING》，看一下RoPE是怎么回事。
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-05-07 21:45:40 +0800 CST'>May 7, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to 26-5-7总结" href="//localhost:1313/posts/26_5_7/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">26-5-6总结
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>今天上午依旧是被占用，直接略过，下午完成一些课程的报告和大作业，略过。 完成cs231n的assignment2，从numpy手写到pytorch给人的感受确实是一个飞跃，自动求梯度是一个伟大的设计，但是用numpy手写各个layer的forward和backward才能真正理解内部的数学过程，能巩固基本的知识和能力还是蛮好的。晚上听了cs224n的lecture2，把词语改成向量是一个很神奇的想法，运行assignment1里面的代码得到&#34;King&#34;-“man”&#43;“woman&#34;可以近似得出&#34;queen&#34;的那一刻很欣喜，我认为让词语能够在数学上被描述是及其学习它的基础。看了一下assignment2的preview，难度不小，有大量的纸笔推导和代码补全，补全numpy代码在cs231n的作业里面练习过很多了已经没什么问题，可能是推导word2vec的发现传播有点难度，但是word2vec似乎也有局限性，lecture2里面提到了它无法应对一词多义的情况，但是我认为如果只有一个滑动的小窗口应该也无法捕捉该词在全文中的含义，几乎没有全局的上下文能力，不过在局部的上下文语义捕捉似乎更占优势。 明天计划是听完lecture3，完成assignment2，抄一下下周二的两个实验报告然后再把后天要交的作业写完，如果还有时间就做一下英语课pre的稿子和PPT
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-05-06 23:38:43 +0800 CST'>May 6, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to 26-5-6总结" href="//localhost:1313/posts/26-5-6/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">从寒假到现在的总结
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>趁着今天搭好博客了赶紧先总结一下从寒假到现在的收获和未来的规划。 去年九月份应该是我第一次接触编程，没记错的话应该是第一节课我才学会敲printf(“Hello,world!\n”)，之后感觉自己可能更喜欢编程，所以就顺着自己的兴趣制定了学习计划。寒假完成了数据结构，C&#43;&#43;，python的学习，开学到现在学了numpy，机器学习和深度学习基础，cs231n课程，完成了cs231n的assignment1,2，现在正在完成assignment3，同时开始学cs224n，与一开始的规划似乎慢了一点，因为六月份就要开始准备期末考试了，不过如果把时间赶一赶的话应该也能完成。五一期间因为有各种事情耽误所以基本没用怎么推进进度，尝试去阅读一些文献，读了《Attention is All you Need》，因为之前听过的课程里面有讲过transformer架构，大概能理解多头自注意力机制，带掩码的自注意力，但是transfomer具体的数学计算过程感觉还是有点难度，在完成assignment3之后应该会好一点。这几天也试着读了下侯世达先生的《哥德尔、艾舍尔、巴赫——集异璧之大成》，大量艺术，历史的内容和晦涩的数学逻辑学推导让人读起来感觉很疲惫，但是其中关于自指的论述也很有意思，先前我对于AI思考的过程颇为好奇，读过书之后给了我一种崭新的，更系统的视角去思考这个问题。总的来看，无论是能力还是思维，相比去年我都获得了我自己满意的提升。 接下来大概是讲一讲自己未来的规划吧，首先7月5号放假之前肯定是要学完cs224n，对应的assignment也要完成，期末考试肯定也不能放松，上学期绩点混到10%了，这学期没怎么在课内投入全靠六月份的投入所以肯定达不到上学期的水平，但是至少要吊在15%的边上。然后是暑假的规划，暑假准备开始接触一些计组的知识，然后看一下cuda编程相关的教程，试着入门一下，毕竟我自己想做的还是更偏向底层的工作，无论是AI infra还是XAI，不是很想跟着现在的技术焦虑的浪潮一块走，至少是不愿意做只会调API或者prompt engineering的工程师，最好能找到个实验室去跟着一起做科研，做一做打杂的活顺便学一些科研技能，再不济也要感受一下科研，干活什么的倒是没有问题。剩下的规划目前还没理清楚，可以预见的是大二会同步推进一些算法上的训练，尤其是C和C&#43;&#43;的（去参加一些比赛什么的也可以接受吧🤔），然后如果有机会的话尽量去参与到一些实际工程项目里面多吸取经验。 最后就是一些思考，上大学快一年了，我感觉至少相比高中的我我应该变化很大。很多之前的幻想破灭但是我也找到自己愿意为之付出努力的方向，我认为我是幸运的。平衡好学校和兴趣的难度也不低，完成这些的代价是水课和一些水赛，综测，第二课堂之类的我完全放弃了，毕竟我的精力有限如果在这些事情上还投入的话我的进度会远远落下，不过该拿的分还是得想办法拿，综测可以不要，但是课程考试我还是得在考前一个星期狠狠努力争取速通😭。 好吧，感觉到这里差不多了，我的第一个博客就在这里收尾吧，争取做到日更，因为更新就代表我今天学到新东西了😋
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-05-05 18:16:51 +0800 CST'>May 5, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to 从寒假到现在的总结" href="//localhost:1313/posts/first_summary/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Congratulations
     </h2>
   </header>
