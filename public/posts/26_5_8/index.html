@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>26-5-8总结 | </title>
+<meta name="keywords" content="">
+<meta name="description" content="今日回顾：昨天任务基本完成，cs224n的assignment2写完了，代码内容很少，作业量主要集中在PDF文件里面，不过大部分是数学题，类似的已经在完成cs231n的时候练习过很多遍了，现在很熟练说是。然后是关于Roformer的论文，原文啃下来还是太难了，最后在gemini的帮助下也是弄明白了怎么回事，既然读了还是很有必要复盘一遍的。从我的理解来看，RoPE就是把一维的词与词之间的位置关系放到了二维层面，关键在于旋转，Q,K分别旋转m和n个角度，经过这个旋转处理后的q,k变成 $q_{m}$ 和 $k_{n}$ ，再将旋转后的带入transfomer中计算内积，相比原来的计算方式，经过旋转处理后的 $q_{m}$ 和 $k_{n}$ 在计算内记得时候他们各自旋转矩阵R相乘得到的最终结果只与n-m有关，那么就摆脱了之前transfomer要记录每个q,k的位置的桎梏，通过记录n-m我们可以得到q,k之间潜在的语法等等关系，这些关系不会因为前后文变长而消失，举个例子q,k是3，5还是2003，2005，它们的n-m始终等于2那么它们之间相对距离所包含的信息依然完整存在。具体的数学推导很巧妙，从二维情况引入，用复数将一维转化为二维，最后推到到n维情况，实现了一个符合人类直觉的结构，在论文原文中有一个对旋转后的Q,K内积的证明，当n-m增大时，该内积会趋向于0，也就意味着两个词之间的距离越远，它们在模型里关系就越不紧密，这个特点给了模型忘掉很久之前的废话的能力。当然也看了一下我感兴趣的点比如怎么优化训练，当然看源码是看不懂的，所以我让gemini写了一段简化版本的cuda算子，然后给我讲了讲，很神奇的算子能够同时调用几千万个线程进行计算，避免掉了复杂的矩阵乘法而是选择用简单的逐点加法和乘法，计算速度大大提高😋pytorch里面写的一行q_out = (q * cos) &#43; (q_rotated * sin)映射到GPU运算调用的就是优化后的CUDA算子。
+明日计划：听cs224n的lecture5，把剩下的作业全部完成，如果还剩下时间就开始接触一些计组的课程">
+<meta name="author" content="">
+<link rel="canonical" href="//localhost:1313/posts/26_5_8/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.84fa7cad4ac788a7a4b78f2470af93d5f01e0c73d96dfd059c570dc91f7f8d1d.css" integrity="sha256-hPp8rUrHiKekt48kcK&#43;T1fAeDHPZbf0FnFcNyR9/jR0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/26_5_8/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      26-5-8总结
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-05-08 20:59:38 +0800 CST'>May 8, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>今日回顾：昨天任务基本完成，cs224n的assignment2写完了，代码内容很少，作业量主要集中在PDF文件里面，不过大部分是数学题，类似的已经在完成cs231n的时候练习过很多遍了，现在很熟练说是。然后是关于Roformer的论文，原文啃下来还是太难了，最后在gemini的帮助下也是弄明白了怎么回事，既然读了还是很有必要复盘一遍的。从我的理解来看，RoPE就是把一维的词与词之间的位置关系放到了二维层面，关键在于旋转，Q,K分别旋转m和n个角度，经过这个旋转处理后的q,k变成 $q_{m}$ 和 $k_{n}$ ，再将旋转后的带入transfomer中计算内积，相比原来的计算方式，经过旋转处理后的 $q_{m}$ 和 $k_{n}$ 在计算内记得时候他们各自旋转矩阵R相乘得到的最终结果只与n-m有关，那么就摆脱了之前transfomer要记录每个q,k的位置的桎梏，通过记录n-m我们可以得到q,k之间潜在的语法等等关系，这些关系不会因为前后文变长而消失，举个例子q,k是3，5还是2003，2005，它们的n-m始终等于2那么它们之间相对距离所包含的信息依然完整存在。具体的数学推导很巧妙，从二维情况引入，用复数将一维转化为二维，最后推到到n维情况，实现了一个符合人类直觉的结构，在论文原文中有一个对旋转后的Q,K内积的证明，当n-m增大时，该内积会趋向于0，也就意味着两个词之间的距离越远，它们在模型里关系就越不紧密，这个特点给了模型忘掉很久之前的废话的能力。当然也看了一下我感兴趣的点比如怎么优化训练，当然看源码是看不懂的，所以我让gemini写了一段简化版本的cuda算子，然后给我讲了讲，很神奇的算子能够同时调用几千万个线程进行计算，避免掉了复杂的矩阵乘法而是选择用简单的逐点加法和乘法，计算速度大大提高😋pytorch里面写的一行q_out = (q * cos) + (q_rotated * sin)映射到GPU运算调用的就是优化后的CUDA算子。</p>
+<p>明日计划：听cs224n的lecture5，把剩下的作业全部完成，如果还剩下时间就开始接触一些计组的课程</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/"></a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
